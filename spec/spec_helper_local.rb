@@ -1,3 +1,7 @@
+RSpec.configure do |config|
+  config.mock_with :rspec
+end
+
 if ENV['COVERAGE'] == 'yes'
   require 'simplecov'
   require 'simplecov-console'
