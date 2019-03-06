@@ -178,7 +178,7 @@ Puppet::Type.type(:apt_key).provide(:apt_key) do
     if resource[:source].nil? and resource[:content].nil?
       # Breaking up the command like this is needed because it blows up
       # if --recv-keys isn't the last argument.
-      command.push('adv', '--keyserver', resource[:server])
+      command.push('adv', '--no-tty', '--keyserver', resource[:server])
       unless resource[:options].nil?
         command.push('--keyserver-options', resource[:options])
       end
